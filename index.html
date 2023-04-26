@@ -25,7 +25,38 @@
                         <i class="fa-solid fa-message"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
-                    
+                </div>
+                <div class="sx-body">
+                    <div class="banner-notifiche">
+                        <div class="notifiche d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+                        
+                        <div>
+                            <h6>Ricevi notifiche di nuovi messaggi</h6>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+                    <div class="p-2">
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="cerca" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="lista-chat">
+                        <div v-for="(elem, index) in contacts" class="contatto">
+                            <div class="d-flex align-items-center gap-3">
+                                <img :src="'./assets' + elem.avatar" class="img-thumbnail" alt="elem.avatar">
+                                <div class="text-lista">
+                                <h6>{{elem.name}}</h6>
+                                <span class="text-primary-emphasis">
+                                    ultimo messaggio inviato
+                                </span>
+                            </div>
+                            </div>
+                            
+                            <span class="orario-lista-chat">
+                                12.00
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="dx">
@@ -39,8 +70,12 @@
                         <i class="fa-solid fa-message"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
+                    
                 </div>
                 <div class="body-box">
+
+
+
 
                 </div>
                 <div class="footer-box">
