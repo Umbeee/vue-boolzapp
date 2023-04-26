@@ -41,7 +41,10 @@
                         <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="cerca" aria-describedby="addon-wrapping">
                     </div>
                     <div class="lista-chat">
-                        <div v-for="(elem, index) in contacts" class="contatto">
+                        <div v-for="(elem, index) in contacts" class="contatto"
+                             :class=" elem.visible == true ? 'true' : '' " 
+                             @click="elem.visible = !elem.visible"
+                        >
                             <div class="d-flex align-items-center gap-3">
                                 <img :src="'./assets' + elem.avatar" class="img-thumbnail" alt="elem.avatar">
                                 <div class="text-lista">
@@ -74,7 +77,11 @@
                 </div>
                 <div class="body-box">
 
-
+                    <!-- <div v-for="(elem, index) in contacts[0].messages">
+                        <div>
+                            <span></span>
+                        </div>
+                    </div> -->
 
 
                 </div>
