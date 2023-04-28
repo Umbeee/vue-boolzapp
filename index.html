@@ -42,9 +42,9 @@
                     </div>
                     <div class="lista-chat">
                         <div v-for="(elem, index) in contacts" class="contatto"
-                             :class=" elem.visible == true ? 'true' : '' " 
-                             @click="elem.visible = !elem.visible"
-                        >
+                             :key="index"
+                             @click="recuperaId(index)">
+
                             <div class="d-flex align-items-center gap-3">
                                 <img :src="'./assets' + elem.avatar" class="img-thumbnail" alt="elem.avatar">
                                 <div class="text-lista">
@@ -65,8 +65,8 @@
             <div class="dx">
                 <div class="header-box">
                     <div class="d-flex align-items-center gap-2">
-                        <img src="./assets/img/avatar_1.jpg" class="img-thumbnail" alt="...">
-                        <span>Michele</span>
+                        <img :src="'./assets' + contacts[indiceCustom].avatar" class="img-thumbnail" alt="...">
+                        <span>{{contacts[indiceCustom].name}}</span>
                     </div>
                     <div class="d-flex align-items-center gap-3">
                         <i class="fa-solid fa-circle-notch"></i>
@@ -77,9 +77,9 @@
                 </div>
                 <div class="body-box">
 
-                    <!-- <div v-for="(elem, index) in contacts[0].messages">
+                    <!-- <div v-for="(elem, index) in contacts">
                         <div>
-                            <span></span>
+                            <span>{{elem.messages[1]}}</span>
                         </div>
                     </div> -->
 

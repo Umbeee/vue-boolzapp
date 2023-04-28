@@ -7,7 +7,7 @@ createApp({
                 {
                     name: 'Michele',
                     avatar: '/img/avatar_1.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -165,14 +165,20 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            indiceCustom: 0
             
         }
        
     },
     methods: {
 
-        
+        recuperaId(i){
+
+            console.log(i)
+            this.indiceCustom = i;
+
+        }
 
     }
 }).mount('#app')
