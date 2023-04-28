@@ -166,7 +166,8 @@ createApp({
                     ],
                 }
             ],
-            indiceCustom: 0
+            indiceCustom: 0,
+            testoMessaggio : ''
             
         }
        
@@ -178,7 +179,44 @@ createApp({
             console.log(i)
             this.indiceCustom = i;
 
-        }
+        },
 
+        inviaMessaggio(){
+
+
+            this.contacts[this.indiceCustom].messages.push({
+                date: this.prendiOraCorrente(),
+                message: this.testoMessaggio,
+                status: 'sent'
+            })
+
+            this.testoMessaggio = ''
+
+            setTimeout( ()=> {
+                this.contacts[this.indiceCustom].messages.push({
+                    date: this.prendiOraCorrente(),
+                    message: 'ok',
+                    status: 'received'
+                })
+            }, 1000)
+        },
+        estraiOrario(i){
+            const arrayDate = this.contacts[this.indiceCustom].messages[i].date.split(' ')
+            return arrayDate[1]
+        },
+
+        prendiOraCorrente(){
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date+' '+time;
+
+            return dateTime;
+        },
+        cercaNome(){
+            for(let i=0; i<10; i++){
+                console[i]
+            }
+        }
     }
 }).mount('#app')
